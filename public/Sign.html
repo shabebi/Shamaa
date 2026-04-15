@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Sign Up Form" data-ar="نموذج التسجيل">Sign Up Form</title>
+    <link rel="icon" href="logoTitle.png" type="image/png">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="sign.css">
+    <link rel="stylesheet" href="rtl.css" id="rtl-stylesheet" disabled>
+</head>
+<body>
+    <div class="home-icon" onclick="window.location.href='index.html'">
+        <i class="fas fa-home"></i>
+    </div>
+
+    <div class="wrapper">
+        <div id="formContent">
+            <!-- Login Form -->
+            <form id="login-form" action="index.html" method="post">
+                <h2 data-en="Log In" data-ar="تسجيل الدخول">Log In</h2>
+                <fieldset>
+                    <label for="login-email" data-en="Phone:" data-ar="رقم هاتفك">Phone:</label>
+                    <input type="tel" id="login-phone" name="user_phone" required
+                           pattern="^\+?[0-9]{9,15}$"
+                           data-ph-en="Enter your phone number" 
+                           data-ph-ar="أدخل رقم هاتفك">
+
+                    <label for="login-password" data-en="Password:" data-ar="كلمة المرور:">Password:</label>
+                    <input type="password" id="login-password" name="user_password" required
+                           data-ph-en="Enter your password"
+                           data-ph-ar="أدخل كلمة المرور">
+                </fieldset>
+                <button type="submit" data-en="Log In" data-ar="دخول">Log In</button>
+                <p>
+                    <span data-en="Don't have an account?" data-ar="ليس لديك حساب؟">Don't have an account?</span>
+                    <a href="#" id="toggle-to-signup" data-en="Sign Up" data-ar="اشتراك">Sign Up</a>
+                </p>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signup-form" class="signup-form" action="index.html" method="post" style="display: none;">
+                <h2 data-en="Sign Up" data-ar="تسجيل جديد">Sign Up</h2>
+                <fieldset>
+                    <label for="name" data-en="Name:" data-ar="الاسم:">Name:</label>
+                    <input type="text" id="name" name="user_name" required
+                           data-ph-en="Enter your full name"
+                           data-ph-ar="أدخل اسمك الكامل">
+
+                    <label for="number" data-en="Phone Number:" data-ar="رقم الهاتف:">Phone Number:</label>
+                    <input type="tel" id="number" name="user_number" required
+                           pattern="+[0-9]{9,15}$"
+                           data-ph-en="Enter your phone number"
+                           data-ph-ar="أدخل رقم هاتفك">
+
+                    <label for="password" data-en="Password:" data-ar="كلمة المرور:">Password:</label>
+                    <input type="password" id="password" name="user_password" required
+                           data-ph-en="Create a password"
+                           data-ph-ar="أنشئ كلمة مرور">
+
+                    <label for="address" data-en="Address (Optional):" data-ar="العنوان (اختياري):">Address (Optional):</label>
+                    <input type="text" id="address" name="user_address"
+                           data-ph-en="Enter your address"
+                           data-ph-ar="أدخل عنوانك">
+                </fieldset>
+                <button type="submit" data-en="Sign Up" data-ar="تسجيل">Sign Up</button>
+                <p>
+                    <span data-en="Already have an account?" data-ar="لديك حساب بالفعل؟">Already have an account?</span>
+                    <a href="#" id="toggle-to-login" data-en="Log In" data-ar="تسجيل دخول">Log In</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="language.js"></script>
+    <script src="sign.js"></script>
+</body>
+</html>

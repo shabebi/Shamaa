@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Shamaa Candle" data-ar="شمعة">Shamaa Candle</title>
+    <link rel="icon" href="logoTitle.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="rtl.css" id="rtl-stylesheet" disabled>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="language-switcher">
+        <button class="lang-toggle">ع</button>
+    </div>
+
+
+    <div class="basket-icon" id="basket-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+
+    <div id="auth-container">
+        <a href="Sign.html" class="sign-link" id="login-button" data-en="Log in" data-ar="تسجيل دخول">Log in</a>
+    </div>
+
+    <header>
+        <div class="container">
+            <nav>
+                <p><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></p>
+                <p><a href="#products" data-en="Products" data-ar="المنتجات">Products</a></p>
+                <p><a href="#about" data-en="About" data-ar="عن الشركة">About</a></p>
+            </nav>
+        </div>
+    </header>
+
+    <div class="center-image-container" id="home">
+        <img src="logo.png" alt="The logo" class="center-image">
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <h2 data-en="Welcome to Shamaa" data-ar="مرحباً بكم في شمعة">Welcome to Shamaa</h2>
+            <p data-en="Explore our exquisite collection of handmade and healthy candles" 
+               data-ar="اكتشف مجموعتنا الفاخرة من الشموع المصنوعة يدوياً والصحية">
+               Explore our exquisite collection of handmade and healthy candles
+            </p>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <div class="container2" id="categories-container">
+            <!-- Categories will be dynamically inserted here -->
+            <div class="loading" data-en="Loading..." data-ar="جاري التحميل...">Loading...</div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 data-en="About Us" data-ar="عن الشركة">About Us</h2>
+            <p id="about-text" 
+                data-en="A business to manufacture healthy scented candles. 100% natural soy wax is used. Soy wax: It is an organic wax that does not produce toxic fumes during combustion. Soy wax is a slow-burning product, thus providing 30-50% longer lifetime for the candle compared to other candles."
+                data-ar="شركة لتصنيع الشموع المعطرة الصحية. يتم استخدام شمع الصويا الطبيعي 100%. شمع الصويا: هو شمع عضوي لا ينتج أبخرة سامة أثناء الاحتراق. شمع الصويا منتج بطيء الاحتراق، مما يوفر عمرًا أطول للشمعة بنسبة 30-50% مقارنة بالشموع الأخرى">
+                A business to manufacture healthy scented candles. 100% natural soy wax is used. Soy wax: It is an organic wax that does not produce toxic fumes during combustion. Soy wax is a slow-burning product, thus providing 30-50% longer lifetime for the candle compared to other candles.
+            </p>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 data-en="Contact Us" data-ar="اتصل بنا">Contact Us</h2>
+            
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:shamaa1candle@gmail.com">shamaa1candle@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+967733706488">+967 733 706 488</a>
+            </div>
+
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <a href="https://instagram.com/shamaa.ye" target="_blank">@shamaa.ye</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copyright Section -->
+    <footer class="copyright">
+        <div class="container">
+            <p>&copy; <b id="current-year"></b> Shamaa All rights reserved</p>
+        </div>
+    </footer>
+
+    <div class="popup-overlay" id="basket-summary-popup">
+        <div class="popup-content">
+            <span class="close-btn" id="close-summary-popup">&times;</span>
+            <h2 data-en="Your Basket" data-ar="سلة التسوق">Your Basket</h2>
+            
+            <div id="basket-loading" style="display: none;" data-en="Loading..." data-ar="جاري التحميل...">Loading...</div>
+            <!-- Basket items here -->
+            <div id="basket-items"></div>
+
+            <!-- Keep total separate so it's not cleared -->
+            <div id="total-container">
+            <p data-en="Total Price:" data-ar="السعر الإجمالي:">
+                Total Price: <p id="total-price"></p>
+            </p>
+            </div>
+
+
+            
+            <button id="confirm" data-en="Confirm Order" data-ar="تأكيد الطلب">Confirm Order</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="language.js"></script>
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

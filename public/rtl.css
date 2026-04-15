@@ -1,0 +1,79 @@
+/* RTL Overrides */
+body {
+    direction: rtl;
+    font-family: 'Tajawal', 'Tahoma', sans-serif;
+    text-align: right;
+}
+
+/* Layout Adjustments */
+.container, .container2 {
+    margin-right: auto;
+    margin-left: auto; /* Center the container */
+}
+
+/* Contact Items */
+.contact-item i {
+    margin-left: 8px; /* Reversed margin for RTL */
+    margin-right: 0;
+}
+
+/* Product Cards */
+.product-card {
+    text-align: right;
+}
+.product-price {
+    float: left; /* Adjusted for RTL */
+}
+
+/* Form Elements */
+input, textarea, select {
+    text-align: right;
+}
+
+/* Fix for phone number in RTL */
+.contact-item a {
+    direction: ltr; /* Forces the number to display in left-to-right */
+    unicode-bidi: plaintext; /* Ensures correct order of numbers */
+}
+
+/* Basket Information Layout (RTL Fix) */
+.basket-item {
+    display: flex;
+    flex-direction: row-reverse; /* Aligns basket items from right to left */
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.basket-item .item-name,
+.basket-item .item-quantity,
+.basket-item .item-price {
+    text-align: right;
+}
+
+.basket-summary {
+    text-align: right; /* Ensures basket summary info is aligned correctly */
+}
+
+/* Adjusting Quantity Button Position */
+#quantity {
+    display: flex;
+    flex-direction: row-reverse; /* Ensures quantity controls are aligned RTL */
+}
+
+/* Button Adjustments for RTL */
+button {
+    text-align: center; /* Ensures buttons are properly aligned in RTL */
+}
+
+/* Adjusting Add to Cart Button for RTL */
+.add-to-cart-btn {
+    text-align: right;
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    a {
+        font-size: 0.8rem;
+    }
+}

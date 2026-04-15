@@ -1,0 +1,87 @@
+<!-- order-confirmed.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmed</title>
+  <link rel="icon" href="logoTitle.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f4f4f4;
+      text-align: center;
+    }
+    .box {
+      background: white;
+      padding: 40px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .btn {
+      display: inline-block;
+      margin: 15px 10px;
+      padding: 10px 20px;
+      background-color: #5d1c34;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #3b0f22;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Order Confirmed!</h1>
+    <p id="order-info"></p>
+
+    <a id="whatsapp-link" class="btn" target="_blank">Send via WhatsApp</a>
+    <a href="index.html" class="btn">Back to Home Page</a>
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    const params = new URLSearchParams(window.location.search);
+    const orderId = params.get('id');
+    const total = params.get('total');
+    const lang = params.get('lang') || 'en';
+
+    const texts = {
+      en: {
+        title: 'Order Confirmed!',
+        info: `Order ID: ${orderId} — Total: ${total} YR`,
+        whatsapp: 'Send via WhatsApp',
+        back: 'Back to Home Page',
+        message: `Hello, I'd like to confirm my order.\nOrder ID: ${orderId}\nTotal: ${total} YR`
+      },
+      ar: {
+        title: 'تم تأكيد الطلب!',
+        info: `رقم الطلب: ${orderId} — الإجمالي: ${total} ريال`,
+        whatsapp: 'إرسال عبر واتساب',
+        back: 'العودة إلى الصفحة الرئيسية',
+        message: `مرحبًا، أود تأكيد طلبي.\nرقم الطلب: ${orderId}\nالإجمالي: ${total} ريال`
+      }
+    };
+
+    const t = texts[lang];
+
+    $("h1").text(t.title);
+    $("#order-info").text(t.info);
+    $("#whatsapp-link").text(t.whatsapp).attr("href", `https://wa.me/+967733706488?text=${encodeURIComponent(t.message)}`);
+    $('a[href="index.html"]').text(t.back);
+
+    if (lang === "ar") {
+      $("body").css("direction", "rtl").css("font-family", "'Tajawal', sans-serif");
+    }
+  });
+</script>
+</body>
+</html>

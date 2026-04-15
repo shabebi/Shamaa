@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* GENERAL STYLING */
+html, body {
+  background-color: #f5f5f5;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+/* FORM CONTAINER */
+#formContent {
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* FORM INPUTS */
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+  text-align: left;
+  display: block;
+  margin-top: 12px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  transition: 0.3s ease-in-out;
+  display: block;
+}
+
+input:focus {
+  background-color: #fff;
+  border: 1px solid #5d1c34;
+  outline: none;
+}
+
+/* BUTTON STYLING */
+button {
+  background-color: #a88d79;
+  border: none;
+  color: white;
+  padding: 14px;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* LINKS */
+p {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+a {
+  color: #00289B;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #001f7a;
+  text-decoration: underline;
+}
+
+/* FORM SWITCHING */
+.signup-form {
+  display: none;
+}
+
+/* RTL Overrides (will be in rtl.css) */
+body[dir="rtl"] .wrapper {
+  text-align: right;
+}
+
+body[dir="rtl"] .language-switcher {
+  right: auto;
+  left: 20px;
+}
+
+body[dir="rtl"] input,
+body[dir="rtl"] button {
+  text-align: right;
+}
+
+/* Placeholder text alignment */
+input::placeholder {
+  text-align: left;
+}
+
+body[dir="rtl"] input::placeholder {
+  text-align: right;
+}
+
+.home-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #72342E;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.home-icon:hover {
+    background-color: #A0522D;
+    transform: scale(1.1);
+}
+
+.home-icon i {
+    font-size: 18px;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="logoTitle.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Shamaa Admin</div>
+        <div class="logout">
+            <button id="logout-btn" > Log Out</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="admin-actions">
+            <h1>Welcome Admin</h1>
+            <div class="button-container">
+                <button id="orders-btn">Orders</button>
+
+            <!-- Orders Popup Container -->
+            <div id="orders-popup" class="popup-container">
+                <div class="popup-content">
+                    <span id="close-popup" class="close-btn">X</span>
+                    <div id="orders-container"></div>
+                </div>
+            </div>
+
+            <!-- Categories Button -->
+            <button id="categories-btn">Categories</button>
+
+            <!-- Categories Popup Container -->
+            <div id="categories-popup" class="popup-container" style="display: none;">
+                <div class="popup-content">
+                    <!-- Close Button for Categories Popup -->
+                    <span id="close-categories-popup" class="close-btn">X</span>
+                    
+                    <!-- Category List -->
+                    <div id="category-list"></div>
+                    
+                    <!-- Button to Trigger Form for Adding a New Category -->
+                    <button id="add-category-btn">Add a New Category</button>
+                    
+                    <!-- Form to Add a New Category (Initially Hidden) -->
+                    <form id="add-category-form" enctype="multipart/form-data">
+                        <input type="text" id="category-name" placeholder="Category Name (English)" required>
+                        <input type="text" id="category-name-ar" placeholder="Category Name (Arabic)" required>
+                        <input type="file" id="category-image" name="image" accept="image/*" required>
+                        <button type="submit">Add Category</button>
+                    </form>
+                    <div id="category-list"></div>                    
+                </div>
+            </div>
+            <button id="products-btn">Products</button>
+
+            <div id="products-popup" class="popup-container" style="display: none;">
+                <div class="popup-content">
+                    <!-- Close Button for Products Popup -->
+                    <span id="close-products-popup" class="close-btn">X</span>
+                    
+                    <!-- Product List -->
+                    <div id="product-list"></div>
+                    
+                    <!-- Button to Trigger Form for Adding a New Product -->
+                    <button id="add-product-btn">Add a New Product</button>
+
+                    <!-- Form to Add a New Product (Initially Hidden) -->
+                    <form id="add-product-form" style="display: none;" enctype="multipart/form-data">
+                        <input type="text" id="product-name" placeholder="Product Name (English)" required>
+                        <input type="text" id="product-name-ar" placeholder="Product Name (Arabic)" required>
+                        <input type="number" id="product-price" placeholder="Price" required min="0" step="0.01">
+                        <select id="product-category" required>
+                            <!-- Categories will be populated via JavaScript -->
+                        </select>
+                        <textarea id="product-description" placeholder="Description (English)" required></textarea>
+                        <textarea id="product-description-ar" placeholder="Description (Arabic)" required></textarea>
+                        <input type="file" id="product-image" name="image" accept="image/*" required>
+                        <button type="submit">Add Product</button>
+                    </form>
+                </div>
+            </div>
+            <button id="colors-btn">Colors</button>
+
+            <!-- Colors Popup Container -->
+            <div id="colors-popup" class="popup-container" style="display: none;">
+                <div class="popup-content">
+                    <!-- Close Button for Colors Popup -->
+                    <span id="close-colors-popup" class="close-btn">X</span>
+                    
+                    <!-- Color List -->
+                    <div id="color-list"></div>
+                    
+                    <!-- Button to Trigger Form for Adding a New Color -->
+                    <button id="add-color-btn">Add a New Color</button>
+                    
+                    <!-- Form to Add a New Color (Initially Hidden) -->
+                    <form id="add-color-form" style="display: none;">
+                        <input type="text" id="color-name" placeholder="Color Name (English)" required>
+                        <input type="text" id="color-name-ar" placeholder="Color Name (Arabic)" required>
+                        <button type="submit">Add Color</button>
+                    </form>
+                </div>
+            </div>
+            <button id="scents-btn">Scents</button>
+
+            <!-- Scents Popup Container -->
+            <div id="scents-popup" class="popup-container" style="display: none;">
+                <div class="popup-content">
+                    <!-- Close Button for Scents Popup -->
+                    <span id="close-scents-popup" class="close-btn">X</span>
+                    
+                    <!-- Scent List -->
+                    <div id="scent-list"></div>
+                    
+                    <!-- Button to Trigger Form for Adding a New Scent -->
+                    <button id="add-scent-btn">Add a New Scent</button>
+                    
+                    <!-- Form to Add a New Scent (Initially Hidden) -->
+                    <form id="add-scent-form" style="display: none;">
+                        <input type="text" id="scent-name" placeholder="Scent Name (English)" required>
+                        <input type="text" id="scent-name-ar" placeholder="Scent Name (Arabic)" required>
+                        <button type="submit">Add Scent</button>
+                    </form>
+                </div>
+            </div>
+            <button id="users-btn">Users</button>
+
+            <!-- Users Popup Container -->
+            <div id="users-popup" class="popup-container" style="display: none;">
+                <div class="popup-content">
+                    <!-- Close Button for Users Popup -->
+                    <span id="close-users-popup" class="close-btn">X</span>
+                    
+                    <!-- Users List -->
+                    <div id="user-list"></div>
+                </div>
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="admin.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

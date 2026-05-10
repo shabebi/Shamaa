@@ -33,7 +33,8 @@ app.use(cors({
       'http://localhost:3006',
       'https://shamaa-shop-api.onrender.com',
       'https://shamaa-shop.onrender.com',
-      'https://shamaa.shop'
+      'https://shamaa.shop',
+      'https://www.shamaa.shop'
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);

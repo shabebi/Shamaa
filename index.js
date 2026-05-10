@@ -32,7 +32,7 @@ app.use(cors({
     const allowedOrigins = [
       'http://localhost:3006',
       'https://shamaa.onrender.com',
-      'https://shamaa.store'
+      'https://shamaa.shop'
     ];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);

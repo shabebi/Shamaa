@@ -69,7 +69,7 @@ const upload = multer({ storage });
 
 app.get("/ping", async (req, res) => {
   try {
-    await pool.query("SELECT NOW()");
+    await db.query("SELECT NOW()");
 
     res.status(200).json({
       status: "awake",

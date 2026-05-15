@@ -67,12 +67,19 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-app.get("/ping", (req, res) => {
-  res.status(200).json({
-    status: "ok",
-    uptime: process.uptime(),
-    timestamp: Date.now()
-  });
+app.get("/ping", async (req, res) => {
+  try {
+    await pool.query("SELECT NOW()");
+
+    res.status(200).json({
+      status: "awake",
+      time: new Date()
+    });
+  } catch (err) {
+    res.status(500).json({
+      error: err.message
+    });
+  }
 });
 
 app.get('/health', async (req, res) => {
